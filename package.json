@@ -1,0 +1,24 @@
+{
+  "name": "up-and-running",
+  "version": "1.0.0",
+  "description": "Using Tailwind with an Elm app",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "elm-tooling install",
+    "prebuild": "elm-tooling install",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "tailwind": "^4.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "elm-tooling": "^1.0.2",
+    "postcss": "^8.3.10",
+    "tailwindcss": "^2.2.17",
+    "vite": "^2.6.10",
+    "vite-plugin-elm": "^2.5.0"
+  }
+}
