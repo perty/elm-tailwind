@@ -1,6 +1,6 @@
 {
-  "name": "up-and-running",
-  "version": "1.0.0",
+  "name": "elm-tailwind-example",
+  "version": "2.0.0",
   "description": "Using Tailwind with an Elm app",
   "main": "index.js",
   "scripts": {
