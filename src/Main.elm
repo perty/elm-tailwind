@@ -1,8 +1,9 @@
 module Main exposing (main)
 
 import Browser exposing (Document)
-import Html exposing (h1, text)
-import Html.Attributes exposing (class)
+import Html exposing (div, h1, img, span, text)
+import Html.Attributes exposing (alt, class, src)
+import Tw
 
 
 type alias Model =
@@ -29,9 +30,16 @@ init _ =
 
 view : Model -> Document Msg
 view model =
-    { title = "The title "
+    { title = "Document"
     , body =
-        [ h1 [ class "text-4xl text-blue-500 text-center font-bold" ] [ text "Hello there!" ]
+        [ div [ class "p-8" ]
+            [ img [ class Tw.h_10, src "img/logo.svg", alt "Workcation" ] []
+            , img [ Tw.twClasses [ Tw.mt_6, Tw.rounded_lg, Tw.shadow_xl ], src "img/beach-work.jpg", alt "woman working on the beach" ] []
+            , h1 [ Tw.twClasses [ Tw.mt_6, Tw.text_2xl, Tw.font_bold, Tw.text_color Tw.Gray 900 ] ]
+                [ text "You can work from anywhere."
+                , span [ class (Tw.text_color Tw.Indigo 500) ] [ text "Take advantage of it." ]
+                ]
+            ]
         ]
     }
 
