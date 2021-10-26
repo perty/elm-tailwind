@@ -1042,6 +1042,11 @@ inlineBlock =
     "inline-block"
 
 
+inline : String
+inline =
+    "inline"
+
+
 uppercase : String
 uppercase =
     "uppercase"
@@ -1130,6 +1135,11 @@ block =
     "block"
 
 
+absolute : String
+absolute =
+    "absolute"
+
+
 grid : String
 grid =
     "grid"
@@ -1138,6 +1148,11 @@ grid =
 gridCols : Int -> String
 gridCols n =
     "grid-cols-" ++ String.fromInt n
+
+
+inset : Int -> String
+inset n =
+    "inset-" ++ String.fromInt n
 
 
 breakPoint : Size -> String -> String

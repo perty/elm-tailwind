@@ -1,7 +1,7 @@
 module Main exposing (main)
 
 import Browser exposing (Document)
-import Html exposing (a, div, h1, img, p, span, text)
+import Html exposing (a, br, div, h1, img, p, span, text)
 import Html.Attributes exposing (alt, href, src)
 import Tw
 
@@ -32,14 +32,17 @@ view : Model -> Document Msg
 view _ =
     { title = "Document"
     , body =
-        [ div [ Tw.twClasses [ Tw.grid, Tw.gridCols 2 ] ]
+        [ div [ Tw.twClasses [ Tw.grid, Tw.breakPoint Tw.Lg <| Tw.gridCols 2 ] ]
             [ div
                 [ Tw.twClasses
                     [ Tw.paddingX Tw.P8
+                    , Tw.breakPoint Tw.Lg <| Tw.paddingX Tw.P12
                     , Tw.paddingY Tw.P12
+                    , Tw.breakPoint Tw.Lg <| Tw.paddingY Tw.P24
                     , Tw.maxWidth Tw.Md
                     , Tw.marginX Tw.MAuto
                     , Tw.breakPoint Tw.Sm <| Tw.maxWidth Tw.Xl
+                    , Tw.breakPoint Tw.Lg <| Tw.maxWidth Tw.Xl4
                     ]
                 ]
                 [ img [ Tw.twClasses [ Tw.height Tw.H10 ], src "img/logo.svg", alt "Workcation" ] []
@@ -65,12 +68,14 @@ view _ =
                         , Tw.breakPoint Tw.Sm <| Tw.marginTop Tw.M8
                         , Tw.breakPoint Tw.Sm <| Tw.textSize Tw.Xl4
                         , Tw.breakPoint Tw.Lg <| Tw.textSize Tw.Xl3
+                        , Tw.breakPoint Tw.Xl <| Tw.textSize Tw.Xl4
                         , Tw.textSize Tw.Xl2
                         , Tw.fontWeight Tw.Bold
                         , Tw.textColorW Tw.Gray Tw.C900
                         ]
                     ]
                     [ text "You can work from anywhere. "
+                    , br [ Tw.twClasses [ Tw.hidden, Tw.breakPoint Tw.Lg <| Tw.inline ] ] []
                     , span [ Tw.twClasses [ Tw.textColorW Tw.Indigo Tw.C500 ] ] [ text "Take advantage of it." ]
                     ]
                 , p
@@ -109,10 +114,19 @@ view _ =
                         [ text "Book your escape" ]
                     ]
                 ]
-            , div []
+            , div
+                [ Tw.twClasses
+                    [ Tw.hidden, Tw.breakPoint Tw.Lg <| Tw.block ]
+                ]
                 [ img
                     [ Tw.twClasses
-                        [ Tw.hidden, Tw.breakPoint Tw.Lg <| Tw.block ]
+                        [ Tw.absolute
+                        , Tw.inset 0
+                        , Tw.width Tw.WFull
+                        , Tw.height Tw.HFull
+                        , Tw.objectFit Tw.Cover
+                        , Tw.objectPosition Tw.Center
+                        ]
                     , src "img/beach-work.jpg"
                     , alt "woman working on the beach"
                     ]
