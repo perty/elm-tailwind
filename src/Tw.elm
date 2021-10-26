@@ -17,16 +17,16 @@ type Color
 
 
 type ColorWeight
-    = W50
-    | W100
-    | W200
-    | W300
-    | W400
-    | W500
-    | W600
-    | W700
-    | W800
-    | W900
+    = C50
+    | C100
+    | C200
+    | C300
+    | C400
+    | C500
+    | C600
+    | C700
+    | C800
+    | C900
 
 
 type Padding
@@ -176,6 +176,155 @@ type Height
     | HScreen
 
 
+type Width
+    = W0
+    | Wpx
+    | W0_5
+    | W1
+    | W1_5
+    | W2
+    | W2_5
+    | W3
+    | W3_5
+    | W4
+    | W5
+    | W6
+    | W7
+    | W8
+    | W9
+    | W10
+    | W11
+    | W12
+    | W14
+    | W16
+    | W20
+    | W24
+    | W28
+    | W32
+    | W36
+    | W40
+    | W44
+    | W48
+    | W52
+    | W56
+    | W60
+    | W64
+    | W72
+    | W80
+    | W96
+    | WAuto
+    | W1To2
+    | W1To3
+    | W2To3
+    | W1To4
+    | W2To4
+    | W3To4
+    | W1To5
+    | W2To5
+    | W3To5
+    | W4To5
+    | W1To6
+    | W2To6
+    | W3To6
+    | W4To6
+    | W5To6
+    | W1To12
+    | W2To12
+    | W3To12
+    | W4To12
+    | W5To12
+    | W6To12
+    | W7To12
+    | W8To12
+    | W9To12
+    | W10To12
+    | W11To12
+    | WFull
+    | WScreen
+    | WMin
+    | WMax
+
+
+type ObjectFit
+    = Contain
+    | Cover
+    | Fill
+    | None
+    | ScaleDown
+
+
+objectFitToString : ObjectFit -> String
+objectFitToString o =
+    case o of
+        Contain ->
+            "contain"
+
+        Cover ->
+            "cover"
+
+        Fill ->
+            "fill"
+
+        None ->
+            "none"
+
+        ScaleDown ->
+            "scale-down"
+
+
+type ObjectPosition
+    = Bottom
+    | Center
+    | Left
+    | LeftBottom
+    | LeftTop
+    | Right
+    | RightBottom
+    | RightTop
+    | Top
+
+
+onjectPositionToString : ObjectPosition -> String
+onjectPositionToString p =
+    case p of
+        Bottom ->
+            "bottom"
+
+        Center ->
+            "center"
+
+        Left ->
+            "left"
+
+        LeftBottom ->
+            "left-bottom"
+
+        LeftTop ->
+            "left-top"
+
+        Right ->
+            "right"
+
+        RightBottom ->
+            "right-bottom"
+
+        RightTop ->
+            "right-top"
+
+        Top ->
+            "top"
+
+
+objectPosition : ObjectPosition -> String
+objectPosition p =
+    "object-" ++ onjectPositionToString p
+
+
+objectFit : ObjectFit -> String
+objectFit o =
+    "object-" ++ objectFitToString o
+
+
 type Tracking
     = Wide
     | Wider
@@ -215,34 +364,34 @@ colorToString color =
 weightToString : ColorWeight -> String
 weightToString weight =
     case weight of
-        W50 ->
+        C50 ->
             "50"
 
-        W100 ->
+        C100 ->
             "100"
 
-        W200 ->
+        C200 ->
             "200"
 
-        W300 ->
+        C300 ->
             "300"
 
-        W400 ->
+        C400 ->
             "400"
 
-        W500 ->
+        C500 ->
             "500"
 
-        W600 ->
+        C600 ->
             "600"
 
-        W700 ->
+        C700 ->
             "700"
 
-        W800 ->
+        C800 ->
             "800"
 
-        W900 ->
+        C900 ->
             "900"
 
 
@@ -630,6 +779,208 @@ heightToString h =
             "screen"
 
 
+widthToString : Width -> String
+widthToString w =
+    case w of
+        W0 ->
+            "0"
+
+        Wpx ->
+            "px"
+
+        W0_5 ->
+            "0.5"
+
+        W1 ->
+            "1"
+
+        W1_5 ->
+            "1.5"
+
+        W2 ->
+            "2"
+
+        W2_5 ->
+            "2.5"
+
+        W3 ->
+            "3"
+
+        W3_5 ->
+            "3.5"
+
+        W4 ->
+            "4"
+
+        W5 ->
+            "5"
+
+        W6 ->
+            "6"
+
+        W7 ->
+            "7"
+
+        W8 ->
+            "8"
+
+        W9 ->
+            "9"
+
+        W10 ->
+            "10"
+
+        W11 ->
+            "11"
+
+        W12 ->
+            "12"
+
+        W14 ->
+            "14"
+
+        W16 ->
+            "16"
+
+        W20 ->
+            "20"
+
+        W24 ->
+            "24"
+
+        W28 ->
+            "28"
+
+        W32 ->
+            "32"
+
+        W36 ->
+            "36"
+
+        W40 ->
+            "40"
+
+        W44 ->
+            "44"
+
+        W48 ->
+            "48"
+
+        W52 ->
+            "52"
+
+        W56 ->
+            "56"
+
+        W60 ->
+            "60"
+
+        W64 ->
+            "64"
+
+        W72 ->
+            "72"
+
+        W80 ->
+            "80"
+
+        W96 ->
+            "96"
+
+        WAuto ->
+            "auto"
+
+        W1To2 ->
+            "1/2"
+
+        W1To3 ->
+            "1/3"
+
+        W2To3 ->
+            "2/3"
+
+        W1To4 ->
+            "1/4"
+
+        W2To4 ->
+            "2/4"
+
+        W3To4 ->
+            "3/4"
+
+        W1To5 ->
+            "1/5"
+
+        W2To5 ->
+            "2/5"
+
+        W3To5 ->
+            "3/5"
+
+        W4To5 ->
+            "4/5"
+
+        W1To6 ->
+            "1/6"
+
+        W2To6 ->
+            "2/6"
+
+        W3To6 ->
+            "3/6"
+
+        W4To6 ->
+            "4/6"
+
+        W5To6 ->
+            "5/6"
+
+        W1To12 ->
+            "1/12"
+
+        W2To12 ->
+            "2/12"
+
+        W3To12 ->
+            "3/12"
+
+        W4To12 ->
+            "4/12"
+
+        W5To12 ->
+            "5/12"
+
+        W6To12 ->
+            "6/12"
+
+        W7To12 ->
+            "7/12"
+
+        W8To12 ->
+            "8/12"
+
+        W9To12 ->
+            "9/12"
+
+        W10To12 ->
+            "10/12"
+
+        W11To12 ->
+            "11/12"
+
+        WFull ->
+            "full"
+
+        WScreen ->
+            "screen"
+
+        WMin ->
+            "min"
+
+        WMax ->
+            "max"
+
+
 fontWeightToString : FontWeight -> String
 fontWeightToString fw =
     case fw of
@@ -675,6 +1026,11 @@ trackingToString t =
 height : Height -> String
 height h =
     "h-" ++ heightToString h
+
+
+width : Width -> String
+width w =
+    "w-" ++ widthToString w
 
 
 inlineBlock : String

@@ -48,7 +48,10 @@ view _ =
                     , Tw.breakPoint Tw.Sm <| Tw.marginTop Tw.M8
                     , Tw.rounded Tw.Lg
                     , Tw.shadow Tw.Xl
-                    , Tw.breakPoint Tw.Sm <| Tw.marginTop Tw.M8
+                    , Tw.breakPoint Tw.Sm <| Tw.height Tw.H64
+                    , Tw.breakPoint Tw.Sm <| Tw.width Tw.WFull
+                    , Tw.breakPoint Tw.Sm <| Tw.objectFit Tw.Cover
+                    , Tw.objectPosition Tw.Center
                     ]
                 , src "img/beach-work.jpg"
                 , alt "woman working on the beach"
@@ -61,16 +64,16 @@ view _ =
                     , Tw.breakPoint Tw.Sm <| Tw.textSize Tw.Xl4
                     , Tw.textSize Tw.Xl2
                     , Tw.fontWeight Tw.Bold
-                    , Tw.textColorW Tw.Gray Tw.W900
+                    , Tw.textColorW Tw.Gray Tw.C900
                     ]
                 ]
                 [ text "You can work from anywhere. "
-                , span [ Tw.twClasses [ Tw.textColorW Tw.Indigo Tw.W500 ] ] [ text "Take advantage of it." ]
+                , span [ Tw.twClasses [ Tw.textColorW Tw.Indigo Tw.C500 ] ] [ text "Take advantage of it." ]
                 ]
             , p
                 [ Tw.twClasses
                     [ Tw.marginTop Tw.M2
-                    , Tw.textColorW Tw.Gray Tw.W600
+                    , Tw.textColorW Tw.Gray Tw.C600
                     , Tw.breakPoint Tw.Sm <| Tw.marginTop Tw.M4
                     , Tw.breakPoint Tw.Sm <| Tw.textSize Tw.Xl
                     ]
@@ -86,7 +89,7 @@ view _ =
                 [ a
                     [ href "#"
                     , Tw.twClasses
-                        [ Tw.backgroundColor Tw.Indigo Tw.W500
+                        [ Tw.backgroundColor Tw.Indigo Tw.C500
                         , Tw.paddingX Tw.P4
                         , Tw.paddingY Tw.P2
                         , Tw.textColor Tw.White
