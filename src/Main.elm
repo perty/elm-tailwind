@@ -2,7 +2,7 @@ module Main exposing (main)
 
 import Browser exposing (Document)
 import Html exposing (a, div, h1, img, p, span, text)
-import Html.Attributes exposing (alt, href, src)
+import Html.Attributes exposing (alt, href, src, style)
 import Tw
 
 
@@ -32,7 +32,15 @@ view : Model -> Document Msg
 view _ =
     { title = "Document"
     , body =
-        [ div [ Tw.twClasses [ Tw.padding Tw.P8, Tw.paddingY Tw.P12 ] ]
+        [ div
+            [ Tw.twClasses
+                [ Tw.paddingX Tw.P8
+                , Tw.paddingY Tw.P12
+                , Tw.maxWidth Tw.Md
+                , Tw.marginX Tw.Mauto
+                , Tw.breakPoint Tw.Sm <| Tw.backgroundColor Tw.Yellow Tw.W300
+                ]
+            ]
             [ img [ Tw.twClasses [ Tw.h_10 ], src "img/logo.svg", alt "Workcation" ] []
             , img [ Tw.twClasses [ Tw.marginTop Tw.M6, Tw.rounded Tw.Lg, Tw.shadow Tw.Xl ], src "img/beach-work.jpg", alt "woman working on the beach" ] []
             , h1

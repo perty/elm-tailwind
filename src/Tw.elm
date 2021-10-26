@@ -112,7 +112,9 @@ type FontWeight
 
 
 type Size
-    = Lg
+    = Sm
+    | Md
+    | Lg
     | Xl
     | Xl2
 
@@ -421,6 +423,12 @@ fontWeightToString fw =
 sizeToString : Size -> String
 sizeToString size =
     case size of
+        Sm ->
+            "sm"
+
+        Md ->
+            "md"
+
         Lg ->
             "lg"
 
@@ -457,6 +465,11 @@ uppercase =
 marginTop : PositiveMargin -> String
 marginTop pm =
     "mt-" ++ positiveMarginToStr pm
+
+
+marginX : PositiveMargin -> String
+marginX pm =
+    "mx-" ++ positiveMarginToStr pm
 
 
 rounded : Size -> String
@@ -510,6 +523,16 @@ paddingX p =
 padding : Padding -> String
 padding p =
     "p-" ++ paddingToString p
+
+
+maxWidth : Size -> String
+maxWidth size =
+    "max-w-" ++ sizeToString size
+
+
+breakPoint : Size -> String -> String
+breakPoint size class =
+    sizeToString size ++ ":" ++ class
 
 
 twClasses : List String -> Html.Attribute msg
