@@ -284,8 +284,8 @@ type ObjectPosition
     | Top
 
 
-onjectPositionToString : ObjectPosition -> String
-onjectPositionToString p =
+objectPositionToString : ObjectPosition -> String
+objectPositionToString p =
     case p of
         Bottom ->
             "bottom"
@@ -317,7 +317,7 @@ onjectPositionToString p =
 
 objectPosition : ObjectPosition -> String
 objectPosition p =
-    "object-" ++ onjectPositionToString p
+    "object-" ++ objectPositionToString p
 
 
 objectFit : ObjectFit -> String
