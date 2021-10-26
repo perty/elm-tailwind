@@ -117,6 +117,7 @@ type Size
     | Lg
     | Xl
     | Xl2
+    | Xl3
     | Xl4
 
 
@@ -1009,6 +1010,9 @@ sizeToString size =
         Xl2 ->
             "2xl"
 
+        Xl3 ->
+            "3xl"
+
         Xl4 ->
             "4xl"
 
@@ -1114,6 +1118,26 @@ padding p =
 maxWidth : Size -> String
 maxWidth size =
     "max-w-" ++ sizeToString size
+
+
+hidden : String
+hidden =
+    "hidden"
+
+
+block : String
+block =
+    "block"
+
+
+grid : String
+grid =
+    "grid"
+
+
+gridCols : Int -> String
+gridCols n =
+    "grid-cols-" ++ String.fromInt n
 
 
 breakPoint : Size -> String -> String
