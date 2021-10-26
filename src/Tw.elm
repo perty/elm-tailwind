@@ -103,7 +103,7 @@ type PositiveMargin
     | M72
     | M80
     | M96
-    | Mauto
+    | MAuto
 
 
 type FontWeight
@@ -117,6 +117,63 @@ type Size
     | Lg
     | Xl
     | Xl2
+    | Xl4
+
+
+type Height
+    = H0
+    | Hpx
+    | H0_5
+    | H1
+    | H1_5
+    | H2
+    | H2_5
+    | H3
+    | H3_5
+    | H4
+    | H5
+    | H6
+    | H7
+    | H8
+    | H9
+    | H10
+    | H11
+    | H12
+    | H14
+    | H16
+    | H20
+    | H24
+    | H28
+    | H32
+    | H36
+    | H40
+    | H44
+    | H48
+    | H52
+    | H56
+    | H60
+    | H64
+    | H72
+    | H80
+    | H96
+    | HAuto
+    | H1To2
+    | H1To3
+    | H2To3
+    | H1To4
+    | H2To4
+    | H3To4
+    | H1To5
+    | H2To5
+    | H3To5
+    | H4To5
+    | H1To6
+    | H2To6
+    | H3To6
+    | H4To6
+    | H5To6
+    | HFull
+    | HScreen
 
 
 type Tracking
@@ -406,8 +463,171 @@ positiveMarginToStr positiveMargin =
         M96 ->
             "96"
 
-        Mauto ->
+        MAuto ->
             "auto"
+
+
+heightToString : Height -> String
+heightToString h =
+    case h of
+        H0 ->
+            "0"
+
+        Hpx ->
+            "px"
+
+        H0_5 ->
+            "0.5"
+
+        H1 ->
+            "1"
+
+        H1_5 ->
+            "1.5"
+
+        H2 ->
+            "2"
+
+        H2_5 ->
+            "2.5"
+
+        H3 ->
+            "3"
+
+        H3_5 ->
+            "3.5"
+
+        H4 ->
+            "4"
+
+        H5 ->
+            "5"
+
+        H6 ->
+            "6"
+
+        H7 ->
+            "7"
+
+        H8 ->
+            "8"
+
+        H9 ->
+            "9"
+
+        H10 ->
+            "10"
+
+        H11 ->
+            "11"
+
+        H12 ->
+            "12"
+
+        H14 ->
+            "14"
+
+        H16 ->
+            "16"
+
+        H20 ->
+            "20"
+
+        H24 ->
+            "24"
+
+        H28 ->
+            "28"
+
+        H32 ->
+            "32"
+
+        H36 ->
+            "36"
+
+        H40 ->
+            "40"
+
+        H44 ->
+            "44"
+
+        H48 ->
+            "48"
+
+        H52 ->
+            "52"
+
+        H56 ->
+            "56"
+
+        H60 ->
+            "60"
+
+        H64 ->
+            "64"
+
+        H72 ->
+            "72"
+
+        H80 ->
+            "80"
+
+        H96 ->
+            "96"
+
+        HAuto ->
+            "Auto"
+
+        H1To2 ->
+            "1/2"
+
+        H1To3 ->
+            "1/3"
+
+        H2To3 ->
+            "2/3"
+
+        H1To4 ->
+            "1/4"
+
+        H2To4 ->
+            "2/4"
+
+        H3To4 ->
+            "3/4"
+
+        H1To5 ->
+            "1/5"
+
+        H2To5 ->
+            "2/5"
+
+        H3To5 ->
+            "3/5"
+
+        H4To5 ->
+            "4/5"
+
+        H1To6 ->
+            "1/6"
+
+        H2To6 ->
+            "2/6"
+
+        H3To6 ->
+            "3/6"
+
+        H4To6 ->
+            "4/6"
+
+        H5To6 ->
+            "5/6"
+
+        HFull ->
+            "full"
+
+        HScreen ->
+            "screen"
 
 
 fontWeightToString : FontWeight -> String
@@ -438,6 +658,9 @@ sizeToString size =
         Xl2 ->
             "2xl"
 
+        Xl4 ->
+            "4xl"
+
 
 trackingToString : Tracking -> String
 trackingToString t =
@@ -449,15 +672,17 @@ trackingToString t =
             "wider"
 
 
-h_10 : String
-h_10 =
-    "h-10"
+height : Height -> String
+height h =
+    "h-" ++ heightToString h
 
 
+inlineBlock : String
 inlineBlock =
     "inline-block"
 
 
+uppercase : String
 uppercase =
     "uppercase"
 
@@ -485,6 +710,11 @@ shadow size =
 textSize : Size -> String
 textSize size =
     "text-" ++ sizeToString size
+
+
+textSizeReset : String
+textSizeReset =
+    "text-base"
 
 
 fontWeight w =

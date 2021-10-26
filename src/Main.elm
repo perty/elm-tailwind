@@ -37,27 +37,52 @@ view _ =
                 [ Tw.paddingX Tw.P8
                 , Tw.paddingY Tw.P12
                 , Tw.maxWidth Tw.Md
-                , Tw.marginX Tw.Mauto
-                , Tw.breakPoint Tw.Sm <| Tw.backgroundColor Tw.Yellow Tw.W300
+                , Tw.marginX Tw.MAuto
+                , Tw.breakPoint Tw.Sm <| Tw.maxWidth Tw.Xl
                 ]
             ]
-            [ img [ Tw.twClasses [ Tw.h_10 ], src "img/logo.svg", alt "Workcation" ] []
-            , img [ Tw.twClasses [ Tw.marginTop Tw.M6, Tw.rounded Tw.Lg, Tw.shadow Tw.Xl ], src "img/beach-work.jpg", alt "woman working on the beach" ] []
+            [ img [ Tw.twClasses [ Tw.height Tw.H10 ], src "img/logo.svg", alt "Workcation" ] []
+            , img
+                [ Tw.twClasses
+                    [ Tw.marginTop Tw.M6
+                    , Tw.breakPoint Tw.Sm <| Tw.marginTop Tw.M8
+                    , Tw.rounded Tw.Lg
+                    , Tw.shadow Tw.Xl
+                    , Tw.breakPoint Tw.Sm <| Tw.marginTop Tw.M8
+                    ]
+                , src "img/beach-work.jpg"
+                , alt "woman working on the beach"
+                ]
+                []
             , h1
                 [ Tw.twClasses
                     [ Tw.marginTop Tw.M6
+                    , Tw.breakPoint Tw.Sm <| Tw.marginTop Tw.M8
+                    , Tw.breakPoint Tw.Sm <| Tw.textSize Tw.Xl4
                     , Tw.textSize Tw.Xl2
                     , Tw.fontWeight Tw.Bold
                     , Tw.textColorW Tw.Gray Tw.W900
                     ]
                 ]
-                [ text "You can work from anywhere."
+                [ text "You can work from anywhere. "
                 , span [ Tw.twClasses [ Tw.textColorW Tw.Indigo Tw.W500 ] ] [ text "Take advantage of it." ]
                 ]
-            , p [ Tw.twClasses [ Tw.marginTop Tw.M2, Tw.textColorW Tw.Gray Tw.W600 ] ]
+            , p
+                [ Tw.twClasses
+                    [ Tw.marginTop Tw.M2
+                    , Tw.textColorW Tw.Gray Tw.W600
+                    , Tw.breakPoint Tw.Sm <| Tw.marginTop Tw.M4
+                    , Tw.breakPoint Tw.Sm <| Tw.textSize Tw.Xl
+                    ]
+                ]
                 [ text "Workcation helps you find work-friendly rentals in beautiful locations so you can enjoy some nice weather even when you're not on vacation."
                 ]
-            , div [ Tw.twClasses [ Tw.marginTop Tw.M2 ] ]
+            , div
+                [ Tw.twClasses
+                    [ Tw.marginTop Tw.M2
+                    , Tw.breakPoint Tw.Sm <| Tw.marginTop Tw.M6
+                    ]
+                ]
                 [ a
                     [ href "#"
                     , Tw.twClasses
@@ -71,6 +96,8 @@ view _ =
                         , Tw.uppercase
                         , Tw.tracking Tw.Wider
                         , Tw.fontWeight Tw.SemiBold
+                        , Tw.textSize Tw.Sm
+                        , Tw.breakPoint Tw.Sm <| Tw.textSizeReset
                         ]
                     ]
                     [ text "Book your escape" ]
